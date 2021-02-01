@@ -1,12 +1,23 @@
 package ru.geekbrains.interveiw_preparation.hw1.task2;
 
-class Lorry extends Car, Moveable, Stopable{
+public class Lorry extends Car {
 
-    public void move(){
-        System.out.println("Car is moving");
+    public Lorry(Engine engine, String color, String name) {
+        super(engine, color, name);
     }
 
-    public void stop(){
-        System.out.println("Car is stop");
+    @Override
+    void open() {
+        System.out.println("Lorry is open");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("Lorry is moving");
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Lorry is stopping");
     }
 }

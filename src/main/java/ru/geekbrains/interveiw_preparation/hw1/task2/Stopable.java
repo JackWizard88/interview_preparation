@@ -1,5 +1,5 @@
 package ru.geekbrains.interveiw_preparation.hw1.task2;
 
-interface Stopable {
+public interface Stopable {
     void stop();
 }

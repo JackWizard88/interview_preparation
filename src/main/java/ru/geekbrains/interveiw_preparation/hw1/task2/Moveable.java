@@ -1,5 +1,5 @@
 package ru.geekbrains.interveiw_preparation.hw1.task2;
 
-interface Moveable {
+public interface Moveable {
     void move();
 }

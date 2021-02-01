@@ -1,10 +1,16 @@
 package ru.geekbrains.interveiw_preparation.hw1.task2;
 
-abstract class Car {
-    public Engine engine;
+public abstract class Car implements Moveable, Stopable {
+
+    private Engine engine;
     private String color;
     private String name;
 
+    public Car(Engine engine, String color, String name) {
+        this.engine = engine;
+        this.color = color;
+        this.name = name;
+    }
 
     protected void start() {
         System.out.println("Car starting");
