@@ -16,7 +16,6 @@ public class Ping implements Runnable {
             while(true) {
                 try {
                     System.out.println("PING____    ");
-                    Thread.sleep(1000);
                     lock.notify();
                     lock.wait();
                 } catch (InterruptedException e) {

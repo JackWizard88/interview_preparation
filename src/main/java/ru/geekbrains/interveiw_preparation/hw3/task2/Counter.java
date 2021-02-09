@@ -13,17 +13,28 @@ public class Counter {
     }
 
     public void count() {
-        lock.lock();
-        count++;
-        if (count % 1000 == 0) {
-            System.err.println("count = " + count);
+        try {
+            lock.lock();
+            count++;
+            if (count % 1000 == 0) {
+                System.err.println("count = " + count);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
         }
-        lock.unlock();
+
     }
 
     public void reset() {
-        lock.lock();
-        count = 0;
-        lock.unlock();
+        try {
+            lock.lock();
+            count = 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
     }
 }

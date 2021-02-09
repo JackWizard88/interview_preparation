@@ -16,7 +16,6 @@ public class Pong implements Runnable {
             while(true) {
                 try {
                     System.out.println("    ____PONG");
-                    Thread.sleep(1000);
                     lock.notify();
                     lock.wait();
                 } catch (InterruptedException e) {

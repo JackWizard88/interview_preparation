@@ -14,7 +14,7 @@ public class Main3 {
     public static void main(String[] args) throws InterruptedException {
 
         // Задание 1: Реализовать программу, в которой два потока поочередно пишут ping и pong.
-        testPingPong();
+//        testPingPong();
 
         // Задание 2: Реализовать потокобезопасный счетчик с помощью интерфейса Lock.
         // Запускает 7 потоков. В результате должен вывести число 6550
