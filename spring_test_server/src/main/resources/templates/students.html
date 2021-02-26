@@ -9,8 +9,8 @@
     <title>Students</title>
 </head>
 <body>
-<div class="container">
-    <h3>Список студентов</h3>
+<div class="container pt-5">
+    <h3>Матрикул</h3>
     <table class="table" th:if="${!students.isEmpty()}">
         <thead class="thead-dark">
         <tr>
@@ -31,8 +31,8 @@
         </tr>
         </tbody>
     </table>
-
-    <h4>Добавить нового студента</h4>
+    <br>
+    <h4>Сотворить нового студента</h4>
 
     <form method="POST" th:action="@{/students/add}">
         <input type="text" name="name" placeholder="Имя студента">
