@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Students</title>
+</head>
+<body>
+<div class="container">
+    <h3>Список студентов</h3>
+    <table class="table" th:if="${!students.isEmpty()}">
+        <thead class="thead-dark">
+        <tr>
+            <td>#</td>
+            <td>Имя</td>
+            <td>Возраст</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s : ${students}">
+            <td th:text="${s.id}"/>
+            <td th:text="${s.name}"/>
+            <td th:text="${s.age}"/>
+            <td>
+                <a class="btn btn-primary" th:href="@{'/students/edit/' + ${s.id}}">Исказить</a>
+                <a class="btn btn-danger" th:href="@{'/students/delete/' + ${s.id}}">Испепелить</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h4>Добавить нового студента</h4>
+
+    <form method="POST" th:action="@{/students/add}">
+        <input type="text" name="name" placeholder="Имя студента">
+        <input type="number" name="age" placeholder="Возраст">
+        <button class="btn btn-primary" type="submit">Призвать</button>
+    </form>
+</div>
+
+</body>
+</html>

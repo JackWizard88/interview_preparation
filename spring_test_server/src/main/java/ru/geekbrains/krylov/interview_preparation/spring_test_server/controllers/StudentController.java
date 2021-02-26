@@ -34,15 +34,31 @@ public class StudentController {
         return studentService.findById(id).orElseThrow(() -> new ResourceNotFoundException("no user with provided id found"));
     }
 
-    @DeleteMapping("/delete/{id}")
-    public void deleteStudentById(@PathVariable Long id) {
+    @GetMapping("/delete/{id}")
+    public String deleteStudentById(@PathVariable Long id) {
         studentService.deleteById(id);
+        return "redirect:/students";
+    }
+
+    @PostMapping("/save")
+    public String saveStudent(@RequestParam(defaultValue = "null") Long id, @RequestParam String name, @RequestParam Integer age) {
+        Student student;
+        if (id != null) {
+            student = studentService.findById(id).orElseThrow(() -> new ResourceNotFoundException("no user with provided id found"));
+            student.setAge(age);
+            student.setName(name);
+        } else {
+            student = new Student(name, age);
+        }
+
+        studentService.saveOrUpdate(student);
+        return "redirect:/students";
     }
 
     @GetMapping("/edit/{id}")
     public String editStudentById(@PathVariable Long id, Model model) {
-        model.addAttribute(studentService.findById(id));
-        return "/jsp/students_edit.jsp";
+        model.addAttribute("student", studentService.findById(id).orElseThrow(() -> new ResourceNotFoundException("no user with provided id found")));
+        return "students_edit";
     }
 
 }
