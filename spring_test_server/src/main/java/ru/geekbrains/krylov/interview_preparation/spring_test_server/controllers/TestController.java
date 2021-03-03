@@ -3,7 +3,7 @@ package ru.geekbrains.krylov.interview_preparation.spring_test_server.controller
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("hello")
+@RequestMapping("/hello")
 public class TestController {
 
     @GetMapping
