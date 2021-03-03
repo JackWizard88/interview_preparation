@@ -26,17 +26,22 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <scope>provided</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.tomcat.embed</groupId>-->
+<!--            <artifactId>tomcat-embed-jasper</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>jstl</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring5</artifactId>
+            <version>3.0.10.RELEASE</version>
         </dependency>
-
 
         <dependency>
             <groupId>com.h2database</groupId>
@@ -83,20 +88,11 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-
 <!--                <plugin>-->
 <!--                    <groupId>org.wildfly.plugins</groupId>-->
 <!--                    <artifactId>wildfly-maven-plugin</artifactId>-->
 <!--                    <version>2.0.2.Final</version>-->
 <!--                </plugin>-->
-
-
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>6.0.1</version>
-            </plugin>
         </plugins>
     </build>
-
 </project>

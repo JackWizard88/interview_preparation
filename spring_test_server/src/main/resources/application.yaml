@@ -9,10 +9,10 @@ spring:
       enabled: true
       path: /h2-console
 
-  mvc:
-    view:
-      prefix: classpath:/jsp/
-      suffix: .jsp
+#  mvc:
+#    view:
+#      prefix: classpath:/jsp/
+#      suffix: .jsp
 
   flyway:
     locations: classpath:/db/

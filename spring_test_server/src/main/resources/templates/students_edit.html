@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Students</title>
+</head>
+<body>
+<div class="container pt-5">
+    <h3>Искажение студента</h3>
+
+    <form method="POST" th:action="@{/students/save}">
+        <input disabled="true" type="number" name="id" style="" th:value="${student.id}" placeholder="#">
+        <input type="text" name="name" th:value="${student.name}" placeholder="Имя студента">
+        <input type="number" name="age" th:value="${student.age}"placeholder="Возраст">
+        <button class="btn btn-primary" type="submit">Запечатлить искажение</button>
+    </form>
+</div>
+
+</body>
+</html>
