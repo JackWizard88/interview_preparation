@@ -18,7 +18,6 @@
 
     <modules>
         <module>interview_preparation_module</module>
-        <module>spring-jsp</module>
         <module>spring_test_server</module>
     </modules>
 
